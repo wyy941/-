@@ -1,0 +1,16 @@
+{
+  "name": "aigc-risk-system",
+  "version": "1.0.0",
+  "description": "本项目依据《大学生AIGC技术依赖风险评估系统设计与实现-开题报告》实现，面向毕业设计演示场景，提供一套从样本数据导入、风险量化评估、协同过滤修正、可视化看板到评估报告生成的完整闭环。",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "dependencies": {
+    "playwright": "^1.59.1"
+  }
+}

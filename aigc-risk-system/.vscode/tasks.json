@@ -1,0 +1,178 @@
+{
+  "version": "2.0.0",
+  "tasks": [
+    {
+      "label": "Backend: Install Requirements",
+      "type": "shell",
+      "command": "${workspaceFolder}\\backend\\venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "pip",
+        "install",
+        "-r",
+        "requirements.txt"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\backend",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}\\backend"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Seed Sample Data",
+      "type": "shell",
+      "command": "${workspaceFolder}\\backend\\venv\\Scripts\\python.exe",
+      "args": [
+        "-m",
+        "scripts.seed_data"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\backend",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}\\backend"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Backend: Start API",
+      "type": "shell",
+      "command": "${workspaceFolder}\\backend\\venv\\Scripts\\python.exe",
+      "args": [
+        "app.py"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\backend",
+        "env": {
+          "PYTHONPATH": "${workspaceFolder}\\backend"
+        }
+      },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "backend",
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "(Serving on http://127\\.0\\.0\\.1:5000|Running on http://(127\\.0\\.0\\.1|localhost):5000)"
+        }
+      }
+    },
+    {
+      "label": "Frontend: Install Dependencies",
+      "type": "shell",
+      "command": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64\\npm.cmd",
+      "args": [
+        "install"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\frontend",
+        "env": {
+          "PATH": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend",
+        "clear": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Frontend: Start Vite",
+      "type": "shell",
+      "command": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64\\npm.cmd",
+      "args": [
+        "run",
+        "dev",
+        "--",
+        "--host",
+        "127.0.0.1",
+        "--port",
+        "5173"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\frontend",
+        "env": {
+          "PATH": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64;${env:PATH}"
+        }
+      },
+      "isBackground": true,
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend",
+        "clear": true
+      },
+      "problemMatcher": {
+        "owner": "custom",
+        "pattern": {
+          "regexp": "."
+        },
+        "background": {
+          "activeOnStart": true,
+          "beginsPattern": ".*",
+          "endsPattern": "Local:\\s+http://(127\\.0\\.0\\.1|localhost):5173/"
+        }
+      }
+    },
+    {
+      "label": "Frontend: Build",
+      "type": "shell",
+      "command": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64\\npm.cmd",
+      "args": [
+        "run",
+        "build"
+      ],
+      "options": {
+        "cwd": "${workspaceFolder}\\frontend",
+        "env": {
+          "PATH": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64;${env:PATH}"
+        }
+      },
+      "presentation": {
+        "reveal": "always",
+        "panel": "dedicated",
+        "group": "frontend",
+        "clear": true
+      },
+      "group": {
+        "kind": "build",
+        "isDefault": true
+      },
+      "problemMatcher": []
+    },
+    {
+      "label": "Full Stack: Start Services",
+      "dependsOn": [
+        "Backend: Start API",
+        "Frontend: Start Vite"
+      ],
+      "dependsOrder": "parallel",
+      "problemMatcher": []
+    }
+  ]
+}

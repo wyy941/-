@@ -1,0 +1,24 @@
+{
+  "python.defaultInterpreterPath": "${workspaceFolder}\\backend\\venv\\Scripts\\python.exe",
+  "python.analysis.extraPaths": [
+    "${workspaceFolder}\\backend"
+  ],
+  "python.analysis.exclude": [
+    "${workspaceFolder}\\backend\\venv"
+  ],
+  "python.terminal.activateEnvironment": true,
+  "terminal.integrated.env.windows": {
+    "PYTHONPATH": "${workspaceFolder}\\backend",
+    "PATH": "C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64;${env:PATH}"
+  },
+  "search.exclude": {
+    "**/backend/venv": true,
+    "**/frontend/node_modules": true,
+    "**/frontend/dist": true
+  },
+  "files.watcherExclude": {
+    "**/backend/venv/**": true,
+    "**/frontend/node_modules/**": true,
+    "**/frontend/dist/**": true
+  }
+}

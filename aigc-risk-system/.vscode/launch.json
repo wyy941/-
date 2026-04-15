@@ -1,0 +1,34 @@
+{
+  "version": "0.2.0",
+  "configurations": [
+    {
+      "name": "Backend: Flask API (Debug)",
+      "type": "debugpy",
+      "request": "launch",
+      "program": "${workspaceFolder}\\backend\\app.py",
+      "cwd": "${workspaceFolder}\\backend",
+      "python": "${workspaceFolder}\\backend\\venv\\Scripts\\python.exe",
+      "env": {
+        "PYTHONPATH": "${workspaceFolder}\\backend"
+      },
+      "jinja": true,
+      "justMyCode": true,
+      "console": "integratedTerminal"
+    },
+    {
+      "name": "Frontend: Vite Dev Server",
+      "type": "node-terminal",
+      "request": "launch",
+      "command": "$env:PATH='C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64;' + $env:PATH; Set-Location -LiteralPath '${workspaceFolder}\\frontend'; & 'C:\\Users\\25362\\Desktop\\tools\\node-v24.14.1-win-x64\\npm.cmd' run dev -- --host 127.0.0.1 --port 5173"
+    }
+  ],
+  "compounds": [
+    {
+      "name": "Full Stack: Debug Backend + Frontend",
+      "configurations": [
+        "Backend: Flask API (Debug)",
+        "Frontend: Vite Dev Server"
+      ]
+    }
+  ]
+}
